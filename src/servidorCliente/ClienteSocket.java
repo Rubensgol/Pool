@@ -16,12 +16,11 @@ public class ClienteSocket {
 		try {
 			cliente = new Socket("127.0.0.1", 7000);
 			saida = new PrintStream(cliente.getOutputStream());
-			
-				System.out.println("A quantidade de numeros da serie");
+			do {
+				System.out.println("Digite 1-Iniciar uma thread nova 2-Pausar 3-Voltar 4-Voltar tudo 5-espera time");
 				tamanho = entrada.nextInt();
 				saida.println(tamanho);
-
-				
+			} while (tamanho < 10);
 
 		} catch (IOException e) {
 			System.out.println("Algo deu errado");
@@ -32,4 +31,3 @@ public class ClienteSocket {
 	}
 
 }
-
