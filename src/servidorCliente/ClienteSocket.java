@@ -14,7 +14,7 @@ public class ClienteSocket {
 		Socket cliente = null;
 		PrintStream saida = null;
 		try {
-			cliente = new Socket("127.0.0.1", 7000);
+			cliente = new Socket("localhost", 9000);
 			saida = new PrintStream(cliente.getOutputStream());
 			do {
 				System.out.println("Digite 1-Iniciar uma thread nova 2-Pausar 3-Voltar 4-Voltar tudo 5-espera time");
