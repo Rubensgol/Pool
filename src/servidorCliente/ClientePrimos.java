@@ -5,8 +5,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClienteSocket {
-
+public class ClientePrimos {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Scanner entrada = new Scanner(System.in);
@@ -14,10 +13,10 @@ public class ClienteSocket {
 		Socket cliente = null;
 		PrintStream saida = null;
 		try {
-			cliente = new Socket("localhost", 9000);
+			cliente = new Socket("localhost", 8080);
 			saida = new PrintStream(cliente.getOutputStream());
 			do {
-				System.out.println("Digite 1-Iniciar uma thread nova 2-Pausar 3-Voltar 4-Voltar tudo 5-espera time");
+				System.out.println("Digite a quantitade de numero primo que deseja encontrar");
 				tamanho = entrada.nextInt();
 				saida.println(tamanho);
 			} while (tamanho < 10);
@@ -29,5 +28,4 @@ public class ClienteSocket {
 		}
 
 	}
-
 }

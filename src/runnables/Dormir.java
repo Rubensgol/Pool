@@ -2,10 +2,10 @@ package runnables;
 
 import java.util.Random;
 
-import teste3.Comando;
+
 import teste3.Quadrado;
 
-public class Dormir implements Comando {
+public class Dormir implements Runnable {
 	private Quadrado quadrado;
 
 	public Dormir(Quadrado quadrado) {
