@@ -12,8 +12,12 @@ public class main {
 		new Thread(server).start();
 		server = new PoolServer(8080);
 		new Thread(server).start();
+		server = new PoolServer(7700);
+		new Thread(server).start();
+		server = new PoolServer(8030);
+		new Thread(server).start();
 		try {
-			Thread.sleep(20 * 1000);
+			Thread.sleep( 20000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

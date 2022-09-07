@@ -5,8 +5,10 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClienteValidaString {
-	public static void main(String[] args) throws IOException {
+public class ClienteValidaString 
+{
+	public static void main(String[] args) throws IOException 
+	{
 		// TODO Auto-generated method stub
 		Scanner entrada = new Scanner(System.in);
 		String palavra;
@@ -26,6 +28,5 @@ public class ClienteValidaString {
 		} finally {
 			cliente.close();
 		}
-
 	}
 }

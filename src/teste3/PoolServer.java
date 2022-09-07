@@ -6,10 +6,12 @@ import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import servidorCliente.ServidorComando;
-import servidorCliente.ServidorFibonacci;
-import servidorCliente.ServidorPrimos;
-import servidorCliente.ServidorValidaString;
+import servidor.ServidorComando;
+import servidor.ServidorDNA;
+import servidor.ServidorFibonacci;
+import servidor.ServidorNomes;
+import servidor.ServidorPrimos;
+import servidor.ServidorValidaString;
 
 public class PoolServer implements Runnable {
 	protected int serverPort = 8080;
@@ -44,8 +46,12 @@ public class PoolServer implements Runnable {
 				this.threadPool.execute(new ServidorFibonacci(clientSocket, " Server Fiboonaci"));
 			else if (serverPort == 8080)
 				this.threadPool.execute(new ServidorPrimos(clientSocket, "Server Primos"));
-			else
+			else if (serverPort == 7500)
 				this.threadPool.execute(new ServidorValidaString(clientSocket, "Server valida string"));
+			else if (serverPort == 7700)
+				this.threadPool.execute(new ServidorDNA(clientSocket, "Server gera fita"));
+			else if (serverPort == 8030)
+				this.threadPool.execute(new ServidorNomes(clientSocket, "Server Nomes"));
 		}
 		this.threadPool.shutdown();
 		System.out.println("Server Stopped.");
